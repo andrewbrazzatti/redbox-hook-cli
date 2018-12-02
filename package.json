@@ -1,0 +1,20 @@
+{
+  "name": "redbox-hook-cli",
+  "version": "1.0.0",
+  "description": "CLI tool to help initialise a redbox hook project",
+  "main": "index.js",
+  "repository": "http://github.com/redbox-mint/redbox-hook-cli",
+  "author": "QCIF",
+  "license": "GPL-3.0",
+  "private": false,
+  "bin": "redbox-hook-cli",
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-commands": "^2.0.1",
+    "command-line-usage": "^5.0.5",
+    "download-github-release": "^0.3.2",
+    "mustache": "^3.0.1",
+    "node-fs-extra": "^0.8.2",
+    "request": "^2.88.0"
+  }
+}

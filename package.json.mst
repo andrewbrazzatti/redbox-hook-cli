@@ -1,0 +1,29 @@
+{
+  "name": "{{ packageName }}",
+  "version": "1.0.0",
+  "description": "A Sails Hook Template",
+  "main": "index.js",
+  "sails": {
+    "isHook": true,
+    "hookName": "{{ packageName }}"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test node_modules/.bin/mocha",
+    "runDev": "docker-compose -f support/development/docker-compose.yml up"
+  },
+  "keywords": [
+    "sails",
+    "hook",
+    "redbox"
+  ],
+  "author": "",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "mocha": "^5.1.1",
+    "sails": "^1.0.2",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}

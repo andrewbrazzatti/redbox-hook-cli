@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+const commandLineArgs = require('command-line-args')
+let readlineSync = require('readline-sync');
+
+/* first - parse the main command */
+const mainDefinitions = [{
+  name: 'command',
+  defaultOption: true
+}]
+const mainOptions = commandLineArgs(mainDefinitions, {
+  stopAtFirstUnknown: true
+})
+const argv = mainOptions._unknown || []
+
+if (mainOptions.command === 'init') {
+  const mergeDefinitions = [{
+    name: 'packageName',
+    alias: 'p'
+  }]
+
+  const mergeOptions = commandLineArgs(mergeDefinitions, {
+    argv
+  })
+
+  if (!mergeOptions.packageName) {
+    mergeOptions.packageName = readlineSync.question('What package name would you like to use for this hook? \n');
+  }
+  let InitProject = require('./commands/initProject');
+  let initProject = new InitProject();
+  initProject.execute(mergeOptions);
+}

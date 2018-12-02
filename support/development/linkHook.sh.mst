@@ -1,0 +1,9 @@
+#! /bin/bash
+cd /opt/sailshook; 
+yarn link; 
+cd /opt/redbox-portal;  
+if [ ! -d "node_modules/{{ packageName }}" ]; then
+    yarn add  "file:/opt/sailshook";
+fi
+yarn link "{{ packageName }}"; 
+node app.js
